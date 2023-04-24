@@ -8,7 +8,7 @@ function Courses() {
   //automatically works on page reload
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/courses/course")
+      .get("https://e-learning-pt7l.onrender.com/api/courses/course")
       .then((res) => {
         setProducts(res.data);
       })

@@ -14,7 +14,7 @@ function AboutUs() {
   //automatically works on page reload
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/populars/popular")
+      .get("https://e-learning-pt7l.onrender.com/api/populars/popular")
       .then((res) => {
         setPopulars(res.data);
       })
