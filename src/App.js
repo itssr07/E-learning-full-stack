@@ -2,7 +2,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import {Routes, Route} from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
-import { HomePage, AboutPage, ProfilePage, CoursesPage, CourseDetailPage, ShowMorePage, SignInPage, SignUpPage} from "./Pages/index.js";
+import { HomePage, AboutPage, ProfilePage, CoursesPage, CourseDetailPage, ShowMorePage, RegisterPage} from "./Pages/index.js";
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
       <Route path="/courses" element={<CoursesPage/>}/>
       <Route path="/coursedetail" element={<CourseDetailPage/>}/>
       <Route path="/showmore" element={<ShowMorePage/>}/>
-      <Route path="/SignIn" element={<SignInPage/>}/>
-      <Route path="/SignUp" element={<SignUpPage/>}/>
+      <Route path="/register" element={<RegisterPage/>}/>
+      
     </Routes>
     <hr/>
     <Footer/>

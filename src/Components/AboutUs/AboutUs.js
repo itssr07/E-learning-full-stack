@@ -5,9 +5,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import SwiperCore, { Autoplay } from "swiper";
 import { Navigation } from "swiper";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 function AboutUs() {
   SwiperCore.use([Autoplay]);
+  const isDesktop = useMediaQuery("(min-width: 991px)")
 
   const [populars, setPopulars] = useState([]);
 
@@ -68,7 +70,7 @@ function AboutUs() {
         </div>
 
     <Swiper
-          slidesPerView={3}
+          slidesPerView={isDesktop ? 3 : 1}
           centeredSlides={true}
           spaceBetween={10}
           grabCursor={true}
