@@ -4,17 +4,19 @@ import axios from "axios";
 
 function Courses() {
   const [products, setProducts] = useState([]);
+  const [showCount, setShowCount] = useState(8);
+const maxShowCount = 8; // You can adjust the maximum number of items to display
 
   //automatically works on page reload
   useEffect(() => {
     axios
-      .get("https://e-learning-pt7l.onrender.com/api/courses/course")
-      .then((res) => {
-        setProducts(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  .get(`https://e-learning-pt7l.onrender.com/api/courses/course?limit=${showCount}`)
+  .then((res) => {
+    setProducts(res.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
   }, []);
 
   return (
@@ -26,8 +28,10 @@ function Courses() {
               COURSES
             </h2>
 
-            <Link 
-            to="/showmore"
+            <Link
+              to="/showmore"
+              onClick={() => setShowCount(showCount + 8)}
+
               class="inline-block rounded-lg border bg-white px-4 py-2 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base"
             >
               Show more
@@ -35,7 +39,8 @@ function Courses() {
           </div>
 
           <div class="grid gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
-            {products.map((product, index) => (
+          {products.slice(0, showCount).map((product, index) => (
+
               <div>
                 <Link
                   to="/coursedetail"
@@ -47,8 +52,6 @@ function Courses() {
                     alt="Photo by Rachit Tank"
                     class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
                   />
-
-                 
                 </Link>
 
                 <div>
@@ -66,9 +69,15 @@ function Courses() {
                     <span class="mb-0.5 text-red-500 line-through">
                       Rs 6500
                     </span>
+                    
                   </div>
+                  <button className="w-full mb-6 mt-4 bg-blue-300 p-3 rounded text-white font-bold">
+                      Add to cart
+                    </button>
                 </div>
+                
               </div>
+              
             ))}
           </div>
         </div>

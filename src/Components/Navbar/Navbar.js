@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -99,7 +99,6 @@ function Navbar() {
               <li></li>
             </ul>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-          
               <div class="relative ml-3">
                 <div className="flex gap-x-2">
                   <button
@@ -118,17 +117,26 @@ function Navbar() {
                     <h1 className="text-gray-300 font-bold ml-4 text-base mt-1">
                       {username}
                     </h1>
-                   
                   </button>
                   <p
-                      onClick={handleLogout}
-                      className="text-base cursor-pointer leading-4 font-semibold border-b border-transparent text-black hover:border-white focus:border-white  "
+                    onClick={handleLogout}
+                    className="text-base cursor-pointer leading-4 font-semibold border-b border-transparent text-black hover:border-white focus:border-white  "
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
                     >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-</svg>
-
-                    </p>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                      />
+                    </svg>
+                  </p>
                 </div>
               </div>
                         

@@ -25,8 +25,6 @@ function Courses() {
             <h2 class="text-2xl font-bold text-gray-800 lg:text-3xl">
               COURSES
             </h2>
-
-          
           </div>
 
           <div class="grid gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
@@ -42,8 +40,6 @@ function Courses() {
                     alt="Photo by Rachit Tank"
                     class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
                   />
-
-                 
                 </Link>
 
                 <div>
@@ -62,6 +58,9 @@ function Courses() {
                       Rs 6500
                     </span>
                   </div>
+                  <button className="w-full mb-6 mt-4 bg-blue-300 p-3 rounded text-white font-bold">
+                      Add to cart
+                    </button>
                 </div>
               </div>
             ))}
